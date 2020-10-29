@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SimpleAuction Python Dapp</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../static/css/style.css"/>
+</head>
+<body>
+    <!-- Form fields for Simple Open Auction -->
+    <div id="create" class="tabcontent">
+        <form method="POST" action="/bid">
+        <h2>Simple Open Auction</h2>
+        <div class="input-group">
+            <h3>Bidder Address</h3>
+            <input type="text" name="bidder_address" required placeholder="Enter bidder address..."/>
+        </div>
+        <div class="input-group">
+            <h3>Bid Amount</h3>
+            <input type="number" name="bid_amount" required placeholder="Enter bid amount..."/>
+        </div><br>
+        <div class="input-group">
+            <input type="submit" value="Bid"/>
+        </div>
+        </form>
+    </div>
+    <!-- Form fields for checking address balance -->
+    <div id="bids" class="tabcontent">
+        <h2>Check highest Bidder & Bid</h2>
+        <div class="input-group">
+            <form method="POST" action="/highestbidder">
+            <button class="btn" id="button-hbidder">Check highest bidder</button>
+            </form>
+        </div><br>
+        <div class="input-group">
+            <form method="POST" action="/highestbid">
+            <button class="btn" id="button-hbid">Check highest bid</button>
+            </form>
+        </div>
+    </div>
+    <h1 class="text message">Highest Bidder:&nbsp;<span id="msghbidder">{{ highest_bidder }}</span></h1>
+    <h1 class="text message">Highest Bid:&nbsp;<span id="msghbid">{{ highest_bid }}</span></h1>
+
+</body>
+</html>
